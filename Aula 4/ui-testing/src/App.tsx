@@ -5,7 +5,7 @@ import { useState } from 'react';
 const App = () => {
 
   const [skillData, setSkillData] = useState({
-    "skillName": "",
+    "skillName": "test",
     "developers": [],
     "profile": {
       "technologies": [],
@@ -23,6 +23,7 @@ const App = () => {
 
   const [showSkill, setShowSkill] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
+  const [showFormReady, setShowFormReady] = useState(true);
 
   let listSkills = skillsData.map((skill, index) =>
       <ul key={index}>
@@ -57,16 +58,7 @@ const App = () => {
       </ul>
     </li>
   </ul></>;
-  
-  function loadSkill() {
-    setShowSkill(true);
-    setShowSkills(false);
-    fetch('https://61e4d942595afe00176e51cb.mockapi.io/api/v1/skill')
-        .then(response => response.json())
-      .then(data => {
-        setSkillData(data[0]);
-        });
-  }
+
   function loadSkills() {
     setShowSkill(false);
     setShowSkills(true);
@@ -76,6 +68,12 @@ const App = () => {
         setSkillsData(data);
         });
   }
+  function addSkills() {
+    setShowSkill(false);
+    setShowSkills(true);
+    loadSkills()
+    
+  }
 
   return (
       <div className="App">
@@ -84,10 +82,18 @@ const App = () => {
             Developers App
           </h1>
       </header>
-      <label htmlFor="input1">Type the skill you would like to search</label>
+      <form>
+        <label htmlFor="input-skill">Skill Name</label>
         <input id="input-skill" className='input1'></input>
-      <a id="search-button" className="button1" onClick={() => loadSkill()}>Search</a>
-        <a id="load-skills-button" className="button1" onClick={() => loadSkills()}>All Skills</a>
+        <label htmlFor="input-developer">Developers</label>
+        <input id="input-developer" className='input1'></input>
+        <label htmlFor="input-tec">Technologies</label>
+        <input id="input-tech" className='input1'></input>
+        <label htmlFor="input-roles">Roles</label>
+        <input id="input-roles" className='input1'></input>
+        <button id="add-skill-button" disabled={!showFormReady} className="button1" onClick={() => addSkills()}>Add Skills</button>
+      </form>
+
           {showSkill? name : ''}
           {showSkills? listSkills: ''}
     </div>

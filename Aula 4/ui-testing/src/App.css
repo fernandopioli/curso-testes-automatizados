@@ -14,8 +14,12 @@
 }
 
 .App {
-  background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(181,70,252,1) 100%);
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(181, 70, 252, 1) 100%
+  );
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,43 +33,51 @@
   color: #61dafb;
 }
 
-h1, li {
+h1,
+li {
   color: white;
 }
 
 input.input1 {
-  height:50px;
-  font-size:14pt;
+  height: 50px;
+  font-size: 14pt;
   padding: 0.35em 1.2em;
-  border: 0.1em solid #FFFFFF;
-  margin: 3em 3em 3em 3em;
+  border: 0.1em solid #ffffff;
+  margin: 1em 3em 1em 3em;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
 
-a.button1 {
+#add-skill-button {
   display: inline-block;
   padding: 0.35em 1.2em;
-  border: 0.1em solid #FFFFFF;
+  border: 0.1em solid #ffffff;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   transition: all 0.2s;
 }
 
-a.button1:hover {
-  color: #000000;
-  background-color: #FFFFFF;
+label {
+  width: 270px;
+  text-align: left;
+  font-size: 14pt;
+  font-weight: 500;
 }
 
-@media all and (max-width:30em) {
+a.button1:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+@media all and (max-width: 30em) {
   a.button1 {
     display: block;
     margin: 0.4em auto;
