@@ -15,6 +15,7 @@ FNDA:0,(anonymous_3)
 FNDA:0,(anonymous_4)
 FNDA:0,(anonymous_5)
 DA:1,1
+<<<<<<< HEAD
 DA:8,4
 DA:17,2
 DA:18,2
@@ -38,4 +39,16 @@ BRDA:39,1,0,1
 BRDA:39,1,1,1
 BRF:4
 BRH:4
+=======
+DA:11,2
+DA:12,2
+DA:13,2
+DA:15,2
+DA:24,1
+DA:28,1
+LF:7
+LH:7
+BRF:0
+BRH:0
+>>>>>>> 09b4b0e25a8510e249ac6c0ab3706432c3cead46
 end_of_record

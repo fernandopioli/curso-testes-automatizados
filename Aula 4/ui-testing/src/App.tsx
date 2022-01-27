@@ -23,7 +23,6 @@ const App = () => {
 
   const [showSkill, setShowSkill] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
-  const [showFormReady, setShowFormReady] = useState(true);
 
   let listSkills = skillsData.map((skill, index) =>
       <ul key={index}>
@@ -68,31 +67,24 @@ const App = () => {
         setSkillsData(data);
         });
   }
-  function addSkills() {
-    setShowSkill(false);
-    setShowSkills(true);
-    loadSkills()
-    
-  }
+  
 
   return (
       <div className="App">
         <header className="App-header">
           <h1>
-            Developers App
+            Devs App
           </h1>
       </header>
-      <form>
         <label htmlFor="input-skill">Skill Name</label>
         <input id="input-skill" className='input1'></input>
         <label htmlFor="input-developer">Developers</label>
         <input id="input-developer" className='input1'></input>
         <label htmlFor="input-tec">Technologies</label>
-        <input id="input-tech" className='input1'></input>
+        <input id="input-tec" className='input1'></input>
         <label htmlFor="input-roles">Roles</label>
         <input id="input-roles" className='input1'></input>
-        <button id="add-skill-button" disabled={!showFormReady} className="button1" onClick={() => addSkills()}>Add Skills</button>
-      </form>
+        <a id="add-skill-button" className="button1" onClick={() => loadSkills()}>Add Skills</a>
 
           {showSkill? name : ''}
           {showSkills? listSkills: ''}
