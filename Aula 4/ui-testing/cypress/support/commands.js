@@ -10,8 +10,12 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add('clickButton', (label) => {
-    cy.get('a').contains(label).click();
+// Cypress.Commands.add('clickButton', (label) => {
+//     cy.get('a').contains(label).click();
+//   });
+
+  Cypress.Commands.add('typeValue', (inputId, value) => {
+    cy.get(`#${inputId}`).type(value);
   });
 //
 // -- This is a child command --
