@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const App = () => {
 
-  const [skillData, setSkillData] = useState({
+  const [skillData] = useState({
     "skillName": "test",
     "developers": [],
     "profile": {
