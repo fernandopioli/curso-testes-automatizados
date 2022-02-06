@@ -1,17 +1,5 @@
 name: build-test
-
 on: [push]
-  # configuração para pull requests
-  # pull_request:
-  #   paths-ignore:
-  #     - '**.md'
-  # push:
-  #   branches:
-  #     - main
-  #     - releases/*
-  #   paths-ignore:
-  #     - '**.md'
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -19,22 +7,21 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     steps:
+      - name: Checkout
       - uses: actions/checkout@v2
       - name: Setup node 16
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
           cache: npm
-      
-      - working-directory: ./Aula 5/client
+
+      - working-directory: ./Aula 2/jest
         run: npm install
-      - working-directory: ./Aula 5/client
-        run: npm run test
-      - working-directory: ./Aula 5/client
-        run: npm run build
-      - working-directory: ./Aula 5/server
+      - working-directory: ./Aula 2/jest
+        run: npm run test:coverage
+      - working-directory: ./Aula 4/ui-testing
         run: npm install
-      - working-directory: ./Aula 5/server
+      - working-directory: ./Aula 4/ui-testing
         run: npm run test
   cypress-run:
     runs-on: ubuntu-latest
@@ -47,4 +34,3 @@ jobs:
           working-directory: ./Aula 4/ui-testing
           build: npm run build
           start: npm start
-
